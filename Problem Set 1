@@ -68,6 +68,34 @@ The lines below give example inputs and correct outputs using asserts, and can b
 assert(validate('AbcdEf00') == True)
 assert(validate('$0RQLpCHz49') == False)
 print("Asserts Completed Successfully")
+
+
+## Problem One "Solution"
+def validate(s):
+    if len(employee_id) >= 8 and len(employee_id) <= 12:
+        if employee_id.isalnum():
+            last_two = employee_id[-2:]
+            print(last_two)
+            if last_two.isdigit():
+                print("last two characters are in the correct format")
+            else:
+                print("LAST TWO CHARACTERS MUST BE DIGITS")
+        else:
+            print("wrong combination")
+    else: 
+        print("invalid length")
+        
+print("what is your employee_id?")
+employee_id = input()
+print("Your employee_id is: " + employee_id)
+
+print()
+s = employee_id
+        
+validate(s)
+
+
+
 ## Exercise 2 (3 points)
 
 Given a sequence of the DNA bases {A, C, G, T}, stored as a string, returns a probability table in a data structure such that one base can be looked up to get the probability p(base). More specifically, write code to return a dictionary such that the value for each key is the probably of that key occuring the the string. For example, give the string "abb", p(a) is equal to $\frac{1}{3}$ and p(b) is $\frac{2}{3}$ Simply, divide the number of times each character appears by the total number of characters. So, the code should return the following dictionary:
