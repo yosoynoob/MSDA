@@ -75,23 +75,19 @@ def validate(s):
     if len(employee_id) >= 8 and len(employee_id) <= 12:
         if employee_id.isalnum():
             last_two = employee_id[-2:]
-            print(last_two)
             if last_two.isdigit():
-                print("last two characters are in the correct format")
+                return True
             else:
-                print("LAST TWO CHARACTERS MUST BE DIGITS")
+                return False
         else:
-            print("wrong combination")
-    else: 
-        print("invalid length")
-        
-print("what is your employee_id?")
-employee_id = input()
-print("Your employee_id is: " + employee_id)
+            return False
+    else:
+        return False 
 
-print()
+
+
 s = employee_id
-        
+
 validate(s)
 
 
