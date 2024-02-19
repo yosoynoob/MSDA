@@ -100,8 +100,17 @@ Given a sequence of the DNA bases {A, C, G, T}, stored as a string, returns a pr
 
 You may use the collections module, but no other libraries.
 def dna_prob1(seq):
-    # Write code here
-    return ... # The code should return a dictionary
+    char_counts = {}
+    for character in seq:
+        if character in char_counts:
+            char_counts[character] += 1
+        else:
+            char_counts[character] = 1
+    total_char = len(seq)
+    tbl = {char: count/total_char for char, count in char_counts.items()}
+    return tbl
+
+
 The lines below give example inputs and correct outputs using asserts, and can be run to test the code. Passing these tests is **NOT** sufficient to guarantee your implementation is correct. You may add additional test cases, but do not remove any tests.
 tbl = dna_prob1('ATCGATTGAGCTCTAGCG')
 assert(tbl['T'] == 5/18)
